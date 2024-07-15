@@ -1,8 +1,10 @@
-class Item:
+class ItemA:
 
     def __init__(self, item, price) -> None:
         self.item = item
         self.price = price
-        self.count = 1
     
+    def calculate_cost(self, items_count) -> int:
+        a_count = items_count[self.item]
+        self
     
