@@ -6,11 +6,12 @@ discount_item_count = {"A" : 3, "B" : 2}
 def checkout(skus):
     item_counts = {"A": 0, "B": 0}
     total_price = 0
+    a_count = 0
+    b_count = 0
 
     for item in skus:
         total_price += price_map[item]
-        item_counts[item] += 1
-
+        #item_counts[item] += 1
 
         if item == "A":
             a_count += 1
@@ -30,6 +31,8 @@ def checkout(skus):
 
 def apply_discount(item_counts):
     for item, count in item_counts:
-        if count == discount_item_count[item]
+        if count == discount_item_count[item]:
+            pass
+
 
 
