@@ -10,6 +10,11 @@ class ItemA:
         a_count = items_count[self.item]
         cost = 0
 
-        cost += 
+        cost += a_count // 5 * self.five_offer
+        a_count %= 5
+        cost += a_count // 3 * self.three_offer
+        a_count %= 3
+        return cost *= 
     
+
 
