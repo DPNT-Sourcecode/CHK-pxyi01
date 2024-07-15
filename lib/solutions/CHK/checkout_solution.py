@@ -1,13 +1,9 @@
-price_map = {"A" : 50, "B" : 30, "C" : 20, "D" : 15}
-discount_amount = {"A": 20, "B": 15}
-discount_item_count = {"A" : 3, "B" : 2}
+from collections import Counter
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    item_counts = {"A": 0, "B": 0}
+    item_counts = Counter(skus)
     total_price = 0
-    a_count = 0
-    b_count = 0
 
     for item in skus:
         try:
@@ -36,3 +32,4 @@ def apply_discount(item_counts):
     for item, count in item_counts:
         if count == discount_item_count[item]:
             pass
+
