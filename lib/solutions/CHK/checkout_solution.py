@@ -10,7 +10,10 @@ def checkout(skus):
     b_count = 0
 
     for item in skus:
-        total_price += price_map[item]
+        try:
+            total_price += price_map[item]
+        except:
+            return -1
         #item_counts[item] += 1
 
         if item == "A":

@@ -6,3 +6,4 @@ class TestCheckout():
         assert checkout("AABCD") == 165
         assert checkout("AAABCD") == 195
         assert checkout("AAAABBBCCD") == 310
+        assert checkout("AABBG") == -1
