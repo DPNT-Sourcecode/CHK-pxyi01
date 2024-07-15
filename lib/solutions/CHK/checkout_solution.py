@@ -14,9 +14,10 @@ def checkout(skus):
         if item is None:
             return -1
         
-        total_price += item.calculate_cost(tag_counts.items())
+        total_price += item.calculate_cost(dict(tag_counts.items()))
         
     return total_price
+
 
 
 

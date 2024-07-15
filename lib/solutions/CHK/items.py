@@ -36,7 +36,7 @@ class ItemB(Item):
     
     def calculate_cost(self, items_count) -> int:
         count = items_count[self.tag]
-        e_count = items_count[self.tag_for_discount]
+        e_count = items_count.get(self.tag_for_discount, 0)
         cost = 0
 
         count -= e_count // 2
