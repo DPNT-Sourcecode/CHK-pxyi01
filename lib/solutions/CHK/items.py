@@ -53,7 +53,7 @@ class ItemC(Item):
 
     def __init__(self) -> None:
         self.tag = "C"
-        self.price = 50
+        self.price = 20
     
     def calculate_cost(self, items_count) -> int:
         count = items_count[self.tag]
@@ -87,3 +87,4 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
