@@ -1,6 +1,9 @@
-from lib.solutions.CHK import checkout_solution
+from lib.solutions.CHK.checkout_solution import checkout
 
 class TestCheckout():
 
     def test_total_price(self):
-        assert checkout_solution("AABCD") == 165
+        assert checkout("AABCD") == 165
+        assert checkout("AAABCD") == 145
+        assert checkout("AAABCD") == 195
+        assert checkout("AAAABBBCCD") == 310
