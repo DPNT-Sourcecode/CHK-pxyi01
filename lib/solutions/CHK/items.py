@@ -14,17 +14,17 @@ class ItemA(Item):
         self.price = 50
     
     def calculate_cost(self, items_count) -> int:
-        count = items_count[self.tag]
+        self.count = items_count[self.tag]
         cost = 0
 
-        cost += self.apply_discount(130, 3, count)
-        cost += self.apply_discount(200, 5, count)
-        cost += count * self.price
+        cost += self.apply_discount(130, 3)
+        cost += self.apply_discount(200, 5)
+        cost += self.count * self.price
         return cost
     
-    def apply_discount(self, discount, number_for_discount, item_count) -> int:
-        cost = item_count // number_for_discount * discount
-        item_count %= number_for_discount
+    def apply_discount(self, discount, number_for_discount) -> int:
+        cost = self.count // number_for_discount * discount
+        self.count %= number_for_discount
         return cost
     
 class ItemB(Item):
@@ -35,18 +35,18 @@ class ItemB(Item):
         self.price = 30
     
     def calculate_cost(self, items_count) -> int:
-        count = items_count[self.tag]
+        self.count = items_count[self.tag]
         e_count = items_count.get(self.tag_for_discount, 0)
         cost = 0
 
-        count -= e_count // 2
-        cost += self.apply_discount(45, 2, count)
-        cost += count * self.price
+        self.count -= e_count // 2
+        cost += self.apply_discount(45, 2)
+        cost += self.count * self.price
         return cost
 
-    def apply_discount(self, discount, number_for_discount, item_count) -> int:
-        cost = item_count // number_for_discount * discount
-        item_count %= number_for_discount
+    def apply_discount(self, discount, number_for_discount) -> int:
+        cost = self.count // number_for_discount * discount
+        self.count %= number_for_discount
         return cost
 
 class ItemC(Item):
@@ -56,10 +56,10 @@ class ItemC(Item):
         self.price = 20
     
     def calculate_cost(self, items_count) -> int:
-        count = items_count[self.tag]
+        self.count = items_count[self.tag]
         cost = 0
 
-        cost += count * self.price
+        cost += self.count * self.price
         return cost
 
 class ItemD(Item):

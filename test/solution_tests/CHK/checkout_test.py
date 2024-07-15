@@ -8,9 +8,12 @@ class TestCheckout():
         assert checkout("AAABCD") == 195
         assert checkout("AAAABBBCCD") == 310
         assert checkout("AABBG") == -1
+        assert checkout("BBEE") == 110
+        assert checkout(@)
     
     def test_ItemA_class(self):
         item_counts = {"A" : 2}
         item = ItemA()
         cost = item.calculate_cost(item_counts)
         assert cost == 100
+
