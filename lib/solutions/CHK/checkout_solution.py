@@ -1,5 +1,5 @@
 from collections import Counter
-from .items import *
+from items import *
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -14,9 +14,11 @@ def checkout(skus):
         if item is None:
             return -1
         
+        print(item)
         total_price += item.calculate_cost(dict(tag_counts.items()))
-        
+        print (total_price)
     return total_price
+
 
 
 
