@@ -18,14 +18,16 @@ class ItemA(Item):
         count = items_count[self.item]
         cost = 0
 
-        cost += count // 5 * self.five_offer
-        count %= 5
+        cost += self.apply_discount(130, 3, item)
         cost += count // 3 * self.three_offer
         count %= 3
         cost += count * self.price
         return cost
     
-    def apply_discount(self, offer, count)
+    def apply_discount(self, discount, number_for_discount, item_count) -> int:
+        cost = item_count // number_for_discount * discount
+        item_count %= number_for_discount
+        return cost
     
 class ItemB(Item):
 
@@ -100,6 +102,7 @@ class ItemE(Item):
         a_count %= 3
         cost += a_count * self.price
         return cost
+
 
 
 
