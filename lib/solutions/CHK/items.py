@@ -87,4 +87,3 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
-
