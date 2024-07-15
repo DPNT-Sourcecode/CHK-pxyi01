@@ -9,7 +9,18 @@ def checkout(skus):
     total_price = 0
 
     for item in skus:
-        total_price += 
+        total_price += price_map[item]
+
+        if item == "A":
+            a_count += 1
+        
+        if item == "B":
+            b_count += 1
+        
+        if a_count == 3:
+            total_price -= 20 
+
     return total_price
+
 
 
