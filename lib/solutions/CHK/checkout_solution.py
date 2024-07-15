@@ -36,6 +36,3 @@ def apply_discount(item_counts):
     for item, count in item_counts:
         if count == discount_item_count[item]:
             pass
-
-
-
