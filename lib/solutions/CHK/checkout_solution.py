@@ -1,8 +1,10 @@
 from collections import Counter
+from Items import *
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
     item_counts = Counter(skus)
+    items = [ItemA(), ItemB(), ItemC(), ItemD(), ItemE()]
     total_price = 0
 
     for item in skus:
@@ -32,4 +34,3 @@ def apply_discount(item_counts):
     for item, count in item_counts:
         if count == discount_item_count[item]:
             pass
-
