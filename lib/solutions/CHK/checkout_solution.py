@@ -26,6 +26,3 @@ def checkout(skus):
             b_count = 0
 
     return total_price
-
-
-
