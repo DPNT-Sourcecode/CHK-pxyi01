@@ -1,6 +1,6 @@
 from lib.solutions.CHK import checkout_solution
 
+class TestCheckout():
 
-class TestSum():
-    def test_sum(self):
-        assert one.get() == 1
+    def test_total_price(self):
+        assert checkout_solution("AABCD") == 165
