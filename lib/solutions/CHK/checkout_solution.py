@@ -1,15 +1,20 @@
-
+price_map = {"A" : 50, "B" : 30, "C" : 20, "D" : 15}
+    discounts = {"A": 20, "B": 15}
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
     price_map = {"A" : 50, "B" : 30, "C" : 20, "D" : 15}
+    discounts = {"A": 20, "B": 15}
+    item_counts = {"A": 0, "B": 0}
     a_count = 0
     b_count = 0
     total_price = 0
 
     for item in skus:
         total_price += price_map[item]
+        item_counts[item] += 1
+
 
         if item == "A":
             a_count += 1
@@ -26,3 +31,5 @@ def checkout(skus):
             b_count = 0
 
     return total_price
+
+def apply_discount(total_price, )
