@@ -1,5 +1,5 @@
 from collections import Counter
-import Items
+from .items import *
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
