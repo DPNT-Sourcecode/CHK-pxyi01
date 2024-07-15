@@ -1,4 +1,12 @@
-class ItemA:
+from abc import ABC, abstractmethod
+
+class Item(ABC):
+
+    @abstractmethod
+    def calculate_cost(self, items_count) -> int:
+        pass
+
+class ItemA(Item):
 
     def __init__(self) -> None:
         self.item = "A"
@@ -14,7 +22,9 @@ class ItemA:
         a_count %= 5
         cost += a_count // 3 * self.three_offer
         a_count %= 3
-        return cost *= 
+        cost += a_count * self.price
+        return cost
     
+
 
 
