@@ -10,11 +10,11 @@ class Item(ABC):
 class ItemA(Item):
 
     def __init__(self) -> None:
-        self.item = "A"
+        self.tag = "A"
         self.price = 50
     
     def calculate_cost(self, items_count) -> int:
-        count = items_count[self.item]
+        count = items_count[self.tag]
         cost = 0
 
         cost += self.apply_discount(130, 3, count)
@@ -30,13 +30,13 @@ class ItemA(Item):
 class ItemB(Item):
 
     def __init__(self) -> None:
-        self.item_for_discount = "E"
-        self.item = "B"
+        self.tag_for_discount = "E"
+        self.tag = "B"
         self.price = 30
     
     def calculate_cost(self, items_count) -> int:
-        count = items_count[self.item]
-        e_count = items_count[self.item_for_discount]
+        count = items_count[self.tag]
+        e_count = items_count[self.tag_for_discount]
         cost = 0
 
         count -= e_count // 2
@@ -52,11 +52,11 @@ class ItemB(Item):
 class ItemC(Item):
 
     def __init__(self) -> None:
-        self.item = "C"
+        self.tag = "C"
         self.price = 50
     
     def calculate_cost(self, items_count) -> int:
-        count = items_count[self.item]
+        count = items_count[self.tag]
         cost = 0
 
         cost += count * self.price
@@ -65,11 +65,11 @@ class ItemC(Item):
 class ItemD(Item):
 
     def __init__(self) -> None:
-        self.item = "D"
+        self.tag = "D"
         self.price = 15
 
     def calculate_cost(self, items_count) -> int:
-        a_count = items_count[self.item]
+        a_count = items_count[self.tag]
         cost = 0
 
         cost += a_count * self.price
@@ -78,11 +78,11 @@ class ItemD(Item):
 class ItemE(Item):
 
     def __init__(self) -> None:
-        self.item = "E"
+        self.tag = "E"
         self.price = 40
     
     def calculate_cost(self, items_count) -> int:
-        a_count = items_count[self.item]
+        a_count = items_count[self.tag]
         cost = 0
 
         cost += a_count * self.price
