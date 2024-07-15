@@ -18,7 +18,12 @@ def checkout(skus):
             b_count += 1
         
         if a_count == 3:
-            total_price -= 20 
+            total_price -= 20 # 20 is discounted when 3 A's are bought
+            a_count = 0
+
+        if b_count == 2:
+            total_price -= 15 # 15 is discounted when 2 B's are bought
+            b_count = 0
 
     return total_price
 
