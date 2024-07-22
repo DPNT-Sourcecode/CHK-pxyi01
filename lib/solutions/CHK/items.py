@@ -2,16 +2,27 @@ class Shopping():
 
     def __init__(self):
         self.items = []
+    
+    def calculate_total_cost(self):
+        total_cost = 0
+
+        for item in self.items:
+            total_cost += item.cost
+        
+        return total_cost
+
+    def add_item(self, item):
+        self.items.append(item)
 
 class Offer():
 
-    
+    pass
 
 class Item():
 
-    def __init__(self, tag, price) -> None:
+    def __init__(self, tag, cost) -> None:
             self.tag = tag
-            self.price = price
+            self.cost = cost
             
 
 class ItemA(Item):
@@ -94,5 +105,6 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
 
 
