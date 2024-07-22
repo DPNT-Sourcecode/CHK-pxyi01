@@ -17,5 +17,3 @@ class TestCheckout():
         item = ItemA()
         cost = item.calculate_cost(item_counts)
         assert cost == 100
-
-
