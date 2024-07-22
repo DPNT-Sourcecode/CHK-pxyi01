@@ -1,7 +1,10 @@
+from collections import Counter
+
 class Shopping():
 
     def __init__(self):
         self.items = []
+        self.item_counts = Counter()
     
     def calculate_total_cost(self):
         total_cost = 0
@@ -13,16 +16,19 @@ class Shopping():
 
     def add_item(self, item):
         self.items.append(item)
+        self.item_counts[item.tag] += 1
 
 class Offer():
+
+    def apply_discount(self, item, item_count):
 
     
 
 class Item():
 
     def __init__(self, tag, cost) -> None:
-            self.tag = tag
-            self.cost = cost
+        self.tag = tag
+        self.cost = cost
             
 
 class ItemA(Item):
@@ -105,6 +111,7 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
 
 
 
