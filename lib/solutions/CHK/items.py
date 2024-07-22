@@ -1,6 +1,7 @@
 from collections import Counter
 
 class Shopping():
+    valid_tags = ["A", "B", "C", "D", "E"]
 
     def __init__(self):
         self.items = []
@@ -15,6 +16,9 @@ class Shopping():
         return total_cost
 
     def add_item(self, item):
+        if item.tag not in Shopping.valid_tags:
+            raise Exception("Not a valid item!")
+        
         self.items.append(item)
 
 class Offer():
@@ -37,3 +41,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
