@@ -1,5 +1,5 @@
 from collections import Counter
-from items import *
+from lib.solutions.CHK.items import *
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -16,5 +16,6 @@ def checkout(skus):
     
     total_price = shopping.calculate_total_cost()
     return total_price
+
 
 
