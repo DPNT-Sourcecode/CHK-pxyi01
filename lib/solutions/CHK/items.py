@@ -16,7 +16,7 @@ class Shopping():
 
 class Offer():
 
-    pass
+    
 
 class Item():
 
@@ -105,6 +105,7 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
 
 
 
