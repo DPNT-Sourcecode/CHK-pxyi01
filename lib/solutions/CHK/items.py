@@ -1,23 +1,15 @@
 class Shopping():
 
-    def __init__(self, )
+    def __init__(self):
+        self.items = []
+        
 
 class Item():
 
     def __init__(self, tag, price) -> None:
             self.tag = tag
             self.price = price
-    
-    def calculate_cost(self, items_count) -> int:
-        self.count = items_count[self.tag]
-        cost = 0
-
-        cost += self.apply_discount(130, 3)
-        cost += self.apply_discount(200, 5)
-        cost += self.count * self.price
-        return cost
-    
-        
+            
 
 class ItemA(Item):
 
@@ -99,3 +91,4 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
