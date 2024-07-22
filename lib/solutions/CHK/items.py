@@ -2,7 +2,10 @@ class Shopping():
 
     def __init__(self):
         self.items = []
-        
+
+class Offer():
+
+    
 
 class Item():
 
@@ -91,4 +94,5 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
 
