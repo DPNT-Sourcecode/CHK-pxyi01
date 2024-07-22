@@ -9,8 +9,10 @@ class Shopping():
 
         for item in self.items:
             total_cost += Offer.get_discounted_cost(item)
+            print(total_cost)
             total_cost += item.cost * item.count
-        
+            print(total_cost)
+            print("==============")
         return total_cost
 
     def add_item(self, item):
@@ -27,14 +29,16 @@ class Offer():
 
         if item.tag == "A":
             discounted_cost += item.count // 5 * 200
-            item.count %= 5 if item.count >= 5 else item.count
+            print(item.count)
+            item.count %= 5 
+            print(item.count)
             discounted_cost += item.count // 3 * 130
-            item.count %= 3 if item.count >= 3 else item.count
+            item.count %= 3 
             discounted_cost += item.count*item.cost
         
         elif item.tag == "B":
             discounted_cost += item.count // 2 * 45
-            item.count %= 2 if item.count >= 2 else item.count
+            item.count %= 2 
             discounted_cost += item.count*item.cost
 
         return discounted_cost
@@ -46,5 +50,6 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
