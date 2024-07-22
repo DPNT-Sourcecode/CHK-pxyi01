@@ -1,5 +1,4 @@
 from lib.solutions.CHK.checkout_solution import checkout
-from lib.solutions.CHK.items import *
 
 class TestCheckout():
 
@@ -11,5 +10,6 @@ class TestCheckout():
         assert checkout("BBEE") == 110
         assert checkout("BBE") == 85
         assert checkout("AAAAAAA") == 300
+
 
 
