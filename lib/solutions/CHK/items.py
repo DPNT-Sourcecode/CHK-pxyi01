@@ -20,14 +20,15 @@ class Shopping():
 
 class Offer():
 
-    def get_discount(self, item, item_count):
-        discount = 0
+    def get_discounted_cost(self, item, item_count):
+        discounted_cost = 0
 
         if item.tag == "A":
-            cost = self.count // 3 * 130
+            discounted_cost += item_count // 3 * 130
             item_count %= 3
-            discount = 
-            return cost
+            discounted_cost += item_count*item.cost
+        
+        return di
     
 
 class Item():
@@ -117,6 +118,7 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
 
 
 
