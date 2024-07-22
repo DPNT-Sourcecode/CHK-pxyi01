@@ -4,38 +4,38 @@ class Shopping():
 
     def __init__(self):
         self.items = []
-        self.item_counts = Counter()
     
     def calculate_total_cost(self):
         total_cost = 0
 
         for item in self.items:
-            total_cost += item.cost
+            total_cost += item.cost * item.count
         
         return total_cost
 
     def add_item(self, item):
         self.items.append(item)
-        self.item_counts[item.tag] += 1
 
 class Offer():
 
-    def get_discounted_cost(self, item, item_count):
+    @staticmethod
+    def get_discounted_cost(item):
         discounted_cost = 0
 
         if item.tag == "A":
-            discounted_cost += item_count // 3 * 130
-            item_count %= 3
-            discounted_cost += item_count*item.cost
+            discounted_cost += item.count // 3 * 130
+            item.count %= 3
+            discounted_cost += item.count*item.cost
         
-        return di
+        return discounted_cost
     
 
 class Item():
 
-    def __init__(self, tag, cost) -> None:
+    def __init__(self, tag, cost, count) -> None:
         self.tag = tag
         self.cost = cost
+        self.count = count
             
 
 class ItemA(Item):
@@ -118,6 +118,7 @@ class ItemE(Item):
 
         cost += a_count * self.price
         return cost
+
 
 
 
