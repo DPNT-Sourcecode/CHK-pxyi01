@@ -1,5 +1,3 @@
-from collections import Counter
-
 class Shopping():
     valid_tags = ["A", "B", "C", "D", "E"]
 
@@ -38,7 +36,7 @@ class Offer():
             discounted_cost += item.count // 2 * 45
             item.count %= 2
             discounted_cost += item.count*item.cost
-            
+
         return discounted_cost
 
 class Item():
@@ -48,3 +46,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
