@@ -28,10 +28,17 @@ class Offer():
         discounted_cost = 0
 
         if item.tag == "A":
+            discounted_cost += item.count // 5 * 200
+            item.count %= 5
             discounted_cost += item.count // 3 * 130
             item.count %= 3
             discounted_cost += item.count*item.cost
         
+        elif item.tag == "B":
+            discounted_cost += item.count // 2 * 45
+            item.count %= 2
+            discounted_cost += item.count*item.cost
+            
         return discounted_cost
 
 class Item():
@@ -41,4 +48,5 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
