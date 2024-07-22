@@ -11,11 +11,16 @@ def checkout(skus):
 
     for tag, count in item_counts.items():
         item_cost = item_costs.get(tag)
+
+        if item_cost is None:
+            return -1
+        
         item = Item(tag, item_cost, count)
         shopping.add_item(item)
     
     total_price = shopping.calculate_total_cost()
     return total_price
+
 
 
 

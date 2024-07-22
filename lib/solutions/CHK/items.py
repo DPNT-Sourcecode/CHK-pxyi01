@@ -1,5 +1,4 @@
 class Shopping():
-    valid_tags = ["A", "B", "C", "D", "E"]
 
     def __init__(self):
         self.items = []
@@ -16,9 +15,6 @@ class Shopping():
         return total_cost
 
     def add_item(self, item):
-        if item.tag not in Shopping.valid_tags:
-            raise Exception("Not a valid item!")
-        
         self.items.append(item)
 
 class Offer():
@@ -34,12 +30,10 @@ class Offer():
             print(item.count)
             discounted_cost += item.count // 3 * 130
             item.count %= 3 
-            discounted_cost += item.count*item.cost
         
         elif item.tag == "B":
             discounted_cost += item.count // 2 * 45
             item.count %= 2 
-            discounted_cost += item.count*item.cost
 
         return discounted_cost
 
@@ -50,6 +44,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
