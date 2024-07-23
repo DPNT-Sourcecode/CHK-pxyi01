@@ -61,14 +61,8 @@ class Offer():
         if item.tag == "E":
             Offer.buyfree_helper(item, items, 2, "B")
         
-        if item.tag == "F" and item.count > 2:
-            effective_item_count = 0
-
-            while (item.count > 2):
-                item.count -= 2
-                effective_item_count += 1
-            
-            item.count = effective_item_count + item.count
+        if item.tag == "F":
+            Offer.buyownfree_helper(item, 2)
     
     def buyfree_helper(item, items, buys_needed, free_item_tag):
         free_items = item.count // buys_needed
@@ -94,7 +88,3 @@ class Item():
         self.cost = cost
         self.count = count
             
-
-
-
-
