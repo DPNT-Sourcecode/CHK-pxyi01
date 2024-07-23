@@ -1,3 +1,5 @@
+import math
+
 class Shopping():
 
     def __init__(self):
@@ -65,7 +67,7 @@ class Offer():
                 matched_item.count = 0 if matched_item.count < 0 else matched_item.count
         
         if item.tag == "F" and item.count > 2:
-            item.count = math. 
+            item.count = math.ceil(item.count / 2)
         
 
 class Item():
@@ -75,5 +77,6 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
