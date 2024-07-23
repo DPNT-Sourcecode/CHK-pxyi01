@@ -36,6 +36,10 @@ class Offer():
             item.count %= 2 
 
         return discounted_cost
+    
+    
+    @staticmethod
+    def apply_buyfree_offer()
 
 class Item():
 
@@ -44,3 +48,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
