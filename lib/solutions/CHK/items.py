@@ -59,13 +59,7 @@ class Offer():
     @staticmethod
     def apply_buyfree_offer(item, items):
         if item.tag == "E":
-            Offer.buyfree_helper
-            free_Bs = item.count // 2
-            matched_item = next(filter(lambda x: x.tag == "B", items), None)
-
-            if matched_item is not None:
-                matched_item.count -= free_Bs
-                matched_item.count = 0 if matched_item.count < 0 else matched_item.count
+            Offer.buyfree_helper(item, items, 2, "B")
         
         if item.tag == "F" and item.count > 2:
             effective_item_count = 0
@@ -76,14 +70,22 @@ class Offer():
             
             item.count = effective_item_count + item.count
     
-    def buyfree_helper(item, items, buys_needed, free_item):
+    def buyfree_helper(item, items, buys_needed, free_item_tag):
         free_items = item.count // buys_needed
-        matched_item = next(filter(lambda x: x.tag == free_item.tag, items), None)
+        matched_item = next(filter(lambda x: x.tag == free_item_tag, items), None)
 
         if matched_item is not None:
             matched_item.count -= free_items
             matched_item.count = 0 if matched_item.count < 0 else matched_item.count
+    
+    def buyownfree_helper(item, buys_needed):
+        effective_item_count = 0
+
+        while (item.count > buys_needed):
+            item.count -= buys_needed
+            effective_item_count += 1
         
+        item.count = effective_item_count + item.count
 
 class Item():
 
@@ -92,6 +94,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
