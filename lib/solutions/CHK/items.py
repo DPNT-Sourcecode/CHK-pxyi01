@@ -44,20 +44,22 @@ class Offer():
         discounted_cost = 0
 
         if item.tag == "A":
-            discounted_cost += item.count // 5 * 200
-            item.count %= 5 
-            discounted_cost += item.count // 3 * 130
-            item.count %= 3 
+            discounted_cost += Offer.get_discounted_cost_helper(item, 5, 200)
+            discounted_cost += Offer.get_discounted_cost_helper(item, 3, 130)
         
         elif item.tag == "B":
-            discounted_cost += item.count // 2 * 45
-            item.count %= 2 
+            discounted_cost += Offer.get_discounted_cost_helper(item, 2, 45)
+        
+        elif item.tag == "H":
+            discounted_cost += Offer.get_discounted_cost_helper(item, 10, 80)
+            discounted_cost += Offer.get_discounted_cost_helper(item, 5, 45)
 
         return discounted_cost
     
     def get_discounted_cost_helper(item, buys_needed, discount):
         discounted_cost = item.count // buys_needed * discount
         item.count %= buys_needed
+        return discounted_cost
     
     @staticmethod
     def apply_buyfree_offer(item, items):
@@ -91,4 +93,5 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
