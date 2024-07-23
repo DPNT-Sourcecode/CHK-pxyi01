@@ -5,13 +5,12 @@ class Shopping():
     
     def calculate_total_cost(self):
         total_cost = 0
-
+        print("new execution")
         for item in self.items:
-            Offer.apply_buyfree_offer()
+            Offer.apply_buyfree_offer(item, self.items)
             total_cost += Offer.get_discounted_cost(item)
-            print(total_cost)
             total_cost += item.cost * item.count
-            print(total_cost)
+            print(f"total cost: {total_cost}")
             print("==============")
         return total_cost
 
@@ -26,9 +25,7 @@ class Offer():
 
         if item.tag == "A":
             discounted_cost += item.count // 5 * 200
-            print(item.count)
             item.count %= 5 
-            print(item.count)
             discounted_cost += item.count // 3 * 130
             item.count %= 3 
         
@@ -56,6 +53,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
