@@ -73,7 +73,7 @@ class Offer():
                 item.count -= 2
                 effective_item_count += 1
             
-            item.count = effective_item_count
+            item.count = effective_item_count + item.count
         
 
 class Item():
@@ -83,4 +83,5 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
