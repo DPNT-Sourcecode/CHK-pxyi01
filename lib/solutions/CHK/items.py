@@ -67,8 +67,13 @@ class Offer():
                 matched_item.count = 0 if matched_item.count < 0 else matched_item.count
         
         if item.tag == "F" and item.count > 2:
+            effective_item_count = 0
+
             while (item.count > 2):
-                item.
+                item.count -= 2
+                effective_item_count += 1
+            
+            item.count = effective_item_count
         
 
 class Item():
@@ -78,3 +83,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
