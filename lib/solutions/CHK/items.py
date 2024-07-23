@@ -41,7 +41,8 @@ class Offer():
     @staticmethod
     def apply_buyfree_offer(item, items):
         if item.tag == "E":
-            free_Bs = 
+            free_Bs = item.count // 2
+            items[lambda x: if x.tag == "B"]
 
 class Item():
 
@@ -50,5 +51,6 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
