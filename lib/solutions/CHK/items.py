@@ -63,6 +63,10 @@ class Offer():
             if matched_item is not None:
                 matched_item.count -= free_Bs
                 matched_item.count = 0 if matched_item.count < 0 else matched_item.count
+        
+        if item.tag == "F" and item.count > 2:
+            item.count //= 2 
+            item.count += 1
 
 class Item():
 
@@ -71,3 +75,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+

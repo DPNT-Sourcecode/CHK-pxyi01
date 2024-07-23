@@ -3,7 +3,7 @@ from lib.solutions.CHK.items import *
 
 # noinspection PyUnusedLocal
 # skus = unicode string
-item_costs = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
+item_costs = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40, "F": 10}
 
 def checkout(skus):
     item_counts = Counter(skus)
@@ -20,5 +20,6 @@ def checkout(skus):
     
     total_price = shopping.calculate_total_cost()
     return total_price
+
 
 
