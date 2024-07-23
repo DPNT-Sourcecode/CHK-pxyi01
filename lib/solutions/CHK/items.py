@@ -7,6 +7,7 @@ class Shopping():
         total_cost = 0
 
         for item in self.items:
+            Offer.apply_buyfree_offer()
             total_cost += Offer.get_discounted_cost(item)
             print(total_cost)
             total_cost += item.cost * item.count
@@ -42,7 +43,11 @@ class Offer():
     def apply_buyfree_offer(item, items):
         if item.tag == "E":
             free_Bs = item.count // 2
-            items[lambda x: if x.tag == "B"]
+            matched_item = next(filter(lambda x: x.tag == "B", items), None)
+
+            if matched_item is not None:
+                matched_item.count -= free_Bs
+                matched_item.count = 0 if matched_item.count < 0 else matched_item.count
 
 class Item():
 
@@ -51,6 +56,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
