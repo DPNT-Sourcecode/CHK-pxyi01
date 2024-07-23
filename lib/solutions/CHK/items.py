@@ -54,6 +54,19 @@ class Offer():
             discounted_cost += Offer.get_discounted_cost_helper(item, 10, 80)
             discounted_cost += Offer.get_discounted_cost_helper(item, 5, 45)
 
+        elif item.tag == "K":
+            discounted_cost += Offer.get_discounted_cost_helper(item, 2, 150)
+
+        elif item.tag == "P":
+            discounted_cost += Offer.get_discounted_cost_helper(item, 5, 200)
+
+        elif item.tag == "Q":
+            discounted_cost += Offer.get_discounted_cost_helper(item, 3, 80)
+
+        elif item.tag == "V":
+            discounted_cost += Offer.get_discounted_cost_helper(item, 3, 130)
+            discounted_cost += Offer.get_discounted_cost_helper(item, 2, 90)
+
         return discounted_cost
     
     def get_discounted_cost_helper(item, buys_needed, discount):
@@ -65,6 +78,12 @@ class Offer():
     def apply_buyfree_offer(item, items):
         if item.tag == "E":
             Offer.buyfree_helper(item, items, 2, "B")
+        
+        elif item.tag == "N":
+            Offer.buyfree_helper(item, items, 3, "M")
+
+        elif item.tag == "R":
+            Offer.buyfree_helper(item, items, 3, "Q")
         
         if item.tag == "F":
             Offer.buyownfree_helper(item, 2)
@@ -93,5 +112,6 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
