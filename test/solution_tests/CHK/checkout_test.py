@@ -16,10 +16,12 @@ class TestCheckout():
         assert checkout("FFF") == 20
         assert checkout("FFFF") == 30
         assert checkout("ABCFFFF") == 130
-        assert checkout("UUU") == 120
+        assert checkout("UUU") == 80
         assert checkout("UU") == 80
-        assert checkout("UUUU") == 80
+        assert checkout("UUUU") == 120
+        assert checkout("UUUUUUUU") == 240
         assert checkout("VVVVRRQR") == 330
+
 
 
 

@@ -85,11 +85,11 @@ class Offer():
         elif item.tag == "R":
             Offer.buyfree_helper(item, items, 3, "Q")
         
+        elif item.tag == "U":
+            Offer.buyfree_helper(item, items, 3, "U")
+        
         if item.tag == "F":
             Offer.buyownfree_helper(item, 2)
-
-        elif item.tag == "U":
-            Offer.buyownfree_helper(item, 3)
     
     def buyfree_helper(item, items, buys_needed, free_item_tag):
         free_items = item.count // buys_needed
@@ -115,6 +115,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
