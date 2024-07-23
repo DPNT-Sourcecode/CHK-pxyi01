@@ -5,13 +5,11 @@ class Shopping():
     
     def calculate_total_cost(self):
         total_cost = 0
-        print("new execution")
-        for item in self.items:
-            print(f"item {item.tag}")
-            total_cost += Offer.get_discounted_cost(item)
-            total_cost += item.cost * item.count
-            print(f"total cost: {total_cost}")
-            print("==============")
+    
+        self.apply_offers()
+        total_cost += self.apply_discounts()
+        total_cost += self.add_item_prices()
+
         return total_cost
 
     def add_item(self, item):
@@ -27,6 +25,14 @@ class Shopping():
         for item in self.items:
             cost += Offer.get_discounted_cost(item)
         
+        return cost
+
+    def add_item_prices(self):
+        cost = 0
+
+        for item in self.items:
+            cost += item.cost * item.count
+
         return cost
 
 class Offer():
@@ -65,6 +71,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
