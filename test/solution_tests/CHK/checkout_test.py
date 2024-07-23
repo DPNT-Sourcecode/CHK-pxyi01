@@ -10,4 +10,6 @@ class TestCheckout():
         assert checkout("BBEE") == 110
         assert checkout("BBE") == 85
         assert checkout("AAAAAAA") == 300
+        assert checkout("FFFFFFF") == 40
+
 
