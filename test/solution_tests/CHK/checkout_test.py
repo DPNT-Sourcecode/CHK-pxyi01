@@ -17,8 +17,3 @@ class TestCheckout():
         assert checkout ("FFFF") == 30
         assert checkout ("ABCFFFF") == 120
 
-
-
-
-
-
