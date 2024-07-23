@@ -68,6 +68,7 @@ class Offer():
         
         if item.tag == "F" and item.count > 2:
             item.count = math.ceil(item.count / 2)
+            item.count = 2 if item.count < 3 else item.count
         
 
 class Item():
@@ -77,6 +78,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
