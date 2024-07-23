@@ -44,7 +44,3 @@ class Item():
         self.cost = cost
         self.count = count
             
-
-
-
-
