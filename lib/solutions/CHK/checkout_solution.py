@@ -20,7 +20,16 @@ item_costs = {
     "N": 40,
     "O": 10,
     "P": 50,
-    "Q"
+    "Q": 30,
+    "R": 50,
+    "S": 30,
+    "T": 20,
+    "U": 40,
+    "V": 50,
+    "W": 20,
+    "X": 90,
+    "Y": 10,
+    "Z": 50
     }
 
 def checkout(skus):
@@ -38,5 +47,6 @@ def checkout(skus):
     
     total_price = shopping.calculate_total_cost()
     return total_price
+
 
 

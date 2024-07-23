@@ -55,6 +55,9 @@ class Offer():
 
         return discounted_cost
     
+    def get_discounted_cost_helper(item, buys_needed, discount):
+        discounted_cost = item.count // buys_needed * discount
+        item.count %= buys_needed
     
     @staticmethod
     def apply_buyfree_offer(item, items):
@@ -88,3 +91,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
