@@ -23,8 +23,3 @@ class TestCheckout():
         assert checkout("VVVVRRQR") == 330
 
 
-
-
-
-
-
