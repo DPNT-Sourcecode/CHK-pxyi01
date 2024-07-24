@@ -25,5 +25,7 @@ class TestCheckout():
         assert checkout("YYXZZT") == 90
         assert checkout("YYXZZTZ") == 107
         assert checkout("AZXXXYAA") == 209
+        assert checkout("CXYZYZC") == 122
+
 
 
