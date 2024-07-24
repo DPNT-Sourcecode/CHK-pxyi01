@@ -107,21 +107,24 @@ class Offer():
         
         item.count = effective_item_count + item.count
     
-    def apply_group_offer(items, item_counts, group, discount, buys_needed):
+    def apply_group_offer(items, group, discount, buys_needed):
         discounted_cost = 0
         buys_tracker = 0
+        last_matched_item = None
 
         for tag in group:
-            item_count = item_counts[tag]
+            matched_item = next(filter(lambda x: x.tag == tag, items), None)
+            last_matched_item = matched_item
 
-            while item_count > 0:
+            while matched_item.count > 0:
                 buys_tracker += 1
-                item_count -= 1
+                matched_item.count -= 1
 
                 if buys_tracker == buys_needed:
                     discounted_cost += discount
                     buys_tracker = 0
-
+        
+        last_matched_item += buys_tracker
 
 class Item():
 
@@ -130,6 +133,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
