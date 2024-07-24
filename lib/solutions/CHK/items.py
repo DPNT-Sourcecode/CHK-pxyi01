@@ -107,8 +107,14 @@ class Offer():
         
         item.count = effective_item_count + item.count
     
-    def apply_group_offer(items, item_counts):
-        
+    def apply_group_offer(items, item_counts, group, discount, buys_needed):
+        discounted_cost = 0
+
+
+        for tag in group:
+            item_count = item_counts[tag]
+
+            if item_count > 0:
 
 
 class Item():
@@ -118,4 +124,5 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
