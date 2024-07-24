@@ -131,7 +131,8 @@ class Offer():
                     discounted_cost += discount
                     buys_tracker = 0
         
-        last_matched_item += buys_tracker
+        if last_matched_item is not None:
+            last_matched_item += buys_tracker
         
         return discounted_cost
 
@@ -142,6 +143,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
