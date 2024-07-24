@@ -7,8 +7,9 @@ class Shopping():
     
     def calculate_total_cost(self):
         total_cost = 0
-    
+
         self.apply_offers()
+        total_cost += Offer.apply_group_offer(self.items, ["Z", "Y", "S", "T", "X"], 45, 3)
         total_cost += self.apply_discounts()
         total_cost += self.add_item_prices()
 
@@ -37,8 +38,10 @@ class Shopping():
 
         return cost
 
+
 class Offer():
 
+    @staticmethod
     def get_discounted_cost(item):
         discounted_cost = 0
 
@@ -73,6 +76,7 @@ class Offer():
         item.count %= buys_needed
         return discounted_cost
     
+    @staticmethod
     def apply_buyfree_offer(item, items):
         if item.tag == "E":
             Offer.buyfree_helper(item, items, 2, "B")
@@ -106,6 +110,7 @@ class Offer():
         
         item.count = effective_item_count + item.count
     
+    @staticmethod
     def apply_group_offer(items, group, discount, buys_needed):
         discounted_cost = 0
         buys_tracker = 0
@@ -137,6 +142,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
