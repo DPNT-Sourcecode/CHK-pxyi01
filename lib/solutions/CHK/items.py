@@ -114,6 +114,7 @@ class Offer():
     def apply_group_offer(items, group, discount, buys_needed):
         discounted_cost = 0
         buys_tracker = 0
+        cost_tracker = 0
         last_matched_item = None
 
         for tag in group:
@@ -127,9 +128,11 @@ class Offer():
             while matched_item.count > 0:
                 buys_tracker += 1
                 matched_item.count -= 1
+                cost_tracker += matched_item.cost
 
                 if buys_tracker == buys_needed:
                     discounted_cost += discount
+                    cost_tracker = 0
                     buys_tracker = 0
         
         if last_matched_item is not None:
@@ -144,3 +147,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
