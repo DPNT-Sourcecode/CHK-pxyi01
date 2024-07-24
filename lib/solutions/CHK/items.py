@@ -118,11 +118,12 @@ class Offer():
 
         for tag in group:
             matched_item = next(filter(lambda x: x.tag == tag, items), None)
-            last_matched_item = matched_item
 
             if matched_item is None:
                 continue
             
+            last_matched_item = matched_item
+
             while matched_item.count > 0:
                 buys_tracker += 1
                 matched_item.count -= 1
@@ -132,7 +133,7 @@ class Offer():
                     buys_tracker = 0
         
         if last_matched_item is not None:
-            last_matched_item += buys_tracker
+            last_matched_item.count += buys_tracker
         
         return discounted_cost
 
@@ -143,6 +144,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
