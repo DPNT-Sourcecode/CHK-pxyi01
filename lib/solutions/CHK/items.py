@@ -57,7 +57,7 @@ class Offer():
             discounted_cost += Offer.get_discounted_cost_helper(item, 5, 45)
 
         elif item.tag == "K":
-            discounted_cost += Offer.get_discounted_cost_helper(item, 2, 150)
+            discounted_cost += Offer.get_discounted_cost_helper(item, 2, 120)
 
         elif item.tag == "P":
             discounted_cost += Offer.get_discounted_cost_helper(item, 5, 200)
@@ -142,6 +142,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
