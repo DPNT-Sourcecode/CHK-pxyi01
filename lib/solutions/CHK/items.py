@@ -2,8 +2,7 @@ import math
 
 class Shopping():
 
-    def __init__(self, item_counts):
-        self.item_counts = item_counts
+    def __init__(self):
         self.items = []
     
     def calculate_total_cost(self):
@@ -116,6 +115,9 @@ class Offer():
             matched_item = next(filter(lambda x: x.tag == tag, items), None)
             last_matched_item = matched_item
 
+            if matched_item is None:
+                continue
+            
             while matched_item.count > 0:
                 buys_tracker += 1
                 matched_item.count -= 1
@@ -125,6 +127,8 @@ class Offer():
                     buys_tracker = 0
         
         last_matched_item += buys_tracker
+        
+        return discounted_cost
 
 class Item():
 
@@ -133,6 +137,7 @@ class Item():
         self.cost = cost
         self.count = count
             
+
 
 
 
