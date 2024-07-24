@@ -34,7 +34,7 @@ item_costs = {
 
 def checkout(skus):
     item_counts = Counter(skus)
-    shopping = Shopping()
+    shopping = Shopping(item_counts)
 
     for tag, count in item_counts.items():
         item_cost = item_costs.get(tag)
@@ -47,5 +47,6 @@ def checkout(skus):
     
     total_price = shopping.calculate_total_cost()
     return total_price
+
 
 

@@ -2,7 +2,8 @@ import math
 
 class Shopping():
 
-    def __init__(self):
+    def __init__(self, item_counts):
+        self.item_counts = item_counts
         self.items = []
     
     def calculate_total_cost(self):
@@ -39,7 +40,6 @@ class Shopping():
 
 class Offer():
 
-    @staticmethod
     def get_discounted_cost(item):
         discounted_cost = 0
 
@@ -74,7 +74,6 @@ class Offer():
         item.count %= buys_needed
         return discounted_cost
     
-    @staticmethod
     def apply_buyfree_offer(item, items):
         if item.tag == "E":
             Offer.buyfree_helper(item, items, 2, "B")
@@ -107,6 +106,10 @@ class Offer():
             effective_item_count += 1
         
         item.count = effective_item_count + item.count
+    
+    def apply_group_offer(items, item_counts):
+        
+
 
 class Item():
 
@@ -115,3 +118,4 @@ class Item():
         self.cost = cost
         self.count = count
             
+
